@@ -2,10 +2,10 @@ import React, { Component }  from "react";
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
 import Characters from "./components/CharacterCard";
-import Wrapper from "./components/Wrapper";
+import Container from "./components/Container";
 import characters from "./characters.json";
 
-// shuffle function from stackoverflow
+// shuffle function 
 function shuffle(array) {
   for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -32,7 +32,6 @@ class App extends Component {
 
     // if the clicked image has an id of the indexed characters
     if (clickedCharacters.indexOf(id) === -1) {
-      // push that id into that id into the array to be stored
       clickedCharacters.push(id);
       console.log(clickedCharacters);
       // run the score function
@@ -72,11 +71,7 @@ class App extends Component {
     this.setState({ characters: shuffle(characters) })
   }
 
-  // reset = () => {
-  //   this.setState({ score: 0 })
-  // }
   
-
   render() {
     return (
       <div>
@@ -85,7 +80,7 @@ class App extends Component {
           topScore={this.state.topScore}
         />
         <Header />
-        <Wrapper>
+        <Container>
           {this.state.characters.map(character => (
             <Characters 
               key={character.id}
@@ -95,7 +90,7 @@ class App extends Component {
               clickedImage={this.clickedImage}
             />
           ))}
-        </Wrapper>
+        </Container>
       </div>
     )
   }

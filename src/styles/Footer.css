@@ -1,0 +1,61 @@
+@font-face {
+    font-family: myFirstFont;
+    src: url("/images/Nue-Gothic.ttf");
+}
+
+.footer {
+    height: 220px;
+    text-align: center;
+   background-color: rgb(14, 14, 47);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-bottom: 20px;
+}
+
+.footer h1 {
+    padding-top: 35px;
+    font-size: 72px;
+    font-family: myFirstFont;
+    font-weight: bold;
+    color: 	#4F2823;
+    text-shadow:
+    -1px -1px 0 #6DC379,
+    1px -1px 0 #6DC379,
+    -1px 1px 0 #6DC379,
+    1px 1px 0 #6DC379;
+}
+
+.footer p {
+    font-size: 26px;
+    color: 	#4F2823;
+    text-shadow:
+    -1px -1px 0 #6DC379,
+    1px -1px 0 #6DC379,
+    -1px 1px 0 #6DC379,
+    1px 1px 0 #6DC379;
+}
+
+@media all and (max-width: 800px) { 
+    .footer {
+        /* height: 180px; */
+    }
+    .footer h1 {
+        padding-top: -40px;
+        font-size: 60px; 
+    }
+    .footer p {
+        font-size: 24px;
+    }
+}
+
+@media all and (max-width: 650px) { 
+    .header {
+        /* height: px; */
+    }
+    .header h1 {
+        font-size: 48px;
+    }
+    .header p {
+        font-size: 20px;
+    }
+}

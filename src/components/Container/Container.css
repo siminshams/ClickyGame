@@ -1,4 +1,4 @@
-.wrapper {
+.container {
     padding-top: 50px;
     height: 100%;
     display: flex;
@@ -13,7 +13,7 @@
 }
 
 @media all and (max-width: 1090px) { 
-    .wrapper {
+    .container {
         max-width: 900px;
     }
     
