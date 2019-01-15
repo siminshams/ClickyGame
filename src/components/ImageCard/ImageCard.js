@@ -1,7 +1,7 @@
 import React from "react";
-import "./CharacterCard.css";
+import "./ImageCard.css";
 
-const Characters = props => (
+const Images = props => (
     <div className="card" onClick={() => props.clickedImage(props.id)}>
         <div className="img-container">
             <img alt={props.name} src={props.image} height={150}/>
@@ -9,4 +9,4 @@ const Characters = props => (
     </div>
 )
 
-export default Characters;
+export default Images;

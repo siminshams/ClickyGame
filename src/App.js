@@ -1,9 +1,9 @@
 import React, { Component }  from "react";
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
-import Characters from "./components/CharacterCard";
+import Images from "./components/ImageCard";
 import Container from "./components/Container";
-import characters from "./characters.json";
+import images from "./images.json";
 
 // shuffle function 
 function shuffle(array) {
@@ -18,22 +18,22 @@ function shuffle(array) {
 class App extends Component {
 
   state = {
-    characters,
+    images,
     score: 0,
     topScore: 0,
-    clickedCharacters: []
+    clickedImages: []
   };
 
   clickedImage = id => {
     // assign the state of the empty array to a let to be updated
-    let clickedCharacters = this.state.clickedCharacters;
+    let clickedImages = this.state.clickedImages;
     let score = this.state.score;
     let topScore = this.state.topScore;
 
     // if the clicked image has an id of the indexed characters
-    if (clickedCharacters.indexOf(id) === -1) {
-      clickedCharacters.push(id);
-      console.log(clickedCharacters);
+    if (clickedImages.indexOf(id) === -1) {
+      clickedImages.push(id);
+      console.log(clickedImages);
       // run the score function
       this.handleIncrement();
       // run the reshuffle function after each click
@@ -42,12 +42,12 @@ class App extends Component {
       alert("You win, you clicked each character with out clicking doubles")
       this.setState({
         score: 0,
-        clickedCharacters: []
+        clickedImages: []
       });
     } else {
       this.setState({
         score: 0,
-        clickedCharacters: []
+        clickedImages: []
       });
       console.log("duplicate")
       alert("Sorry you clicked the same person twice, start over")
@@ -68,9 +68,8 @@ class App extends Component {
 
   // shuffle up images
   makeShuffle = () => {
-    this.setState({ characters: shuffle(characters) })
+    this.setState({ image: shuffle(images) })
   }
-
   
   render() {
     return (
@@ -81,12 +80,12 @@ class App extends Component {
         />
         <Header />
         <Container>
-          {this.state.characters.map(character => (
-            <Characters 
-              key={character.id}
-              id={character.id}
-              name={character.name}
-              image={character.image}
+          {this.state.images.map(image => (
+            <Images 
+              key={image.id}
+              id={image.id}
+              name={image.name}
+              image={image.image}
               clickedImage={this.clickedImage}
             />
           ))}
